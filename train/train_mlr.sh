@@ -49,4 +49,5 @@ echo "[Model URI ] $model_uri"
 #Invalidate the token: It is highly recommended
 #to invalidate your token at the end of every session (which
 #may of course involve multiple requests).
+
 curl -d subjectid=$token http://opensso.in-silico.ch/opensso/identity/logout
