@@ -4,8 +4,9 @@
 #so as to acquire an authentication token from the
 #SSO server at opensso.in-silico.ch
 
+msg='[curl-examples/feature]';
 
-echo '[curl-examples/feature] authenticating...'
+echo "$msg authenticating..."
 
 #Your username:
 username=guest
@@ -22,17 +23,15 @@ token=`echo $token | cut -c10-80`;
 echo "[Token ] $token";
 
 
-echo '[curl-examples/feature] done!';
+echo "$msg done!";
 
-echo '[curl-examples/feature] POSTing the feature...'
+echo "$msg POSTing the feature...";
 feature_uri=`curl -X POST --data-binary @myfeature.rdf\
   -H "subjectid:$token" \
   http://apps.ideaconsult.net:8080/ambit2/feature/ \
   -H Content-type:application/rdf+xml 2> /dev/null`;
-echo '[curk-examples/feature] done! New feature created:'
-echo $feature_uri;
+echo "$msg done! New feature created: $feature_uri"
 
-
-echo '[curl-examples/feature] logging out';
+echo "$msg logging out";
 #Invalidate the token
 curl -d subjectid=$token http://opensso.in-silico.ch/opensso/identity/logout
