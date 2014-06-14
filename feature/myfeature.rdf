@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY this 'http://apps.ideaconsult.net:8080/ambit2/'>
+  <!ENTITY dc 'http://purl.org/dc/elements/1.1/'>
+  <!ENTITY ot 'http://www.opentox.org/api/1.1#'>
+  <!ENTITY ota 'http://www.opentox.org/algorithmTypes.owl#'>
+  <!ENTITY otee 'http://www.opentox.org/echaEndpoints.owl#'>
+  <!ENTITY bx 'http://purl.org/net/nknouf/ns/bibtex#'>
+  <!ENTITY dcterms 'http://purl.org/dc/terms/'>
+  <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+  <!ENTITY am 'http://apps.ideaconsult.net:8080/ambit2/model/'>
+  <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
+  <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
+  <!ENTITY ac 'http://apps.ideaconsult.net:8080/ambit2/compound/'>
+  <!ENTITY ad 'http://apps.ideaconsult.net:8080/ambit2/dataset/'>
+  <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+  <!ENTITY ag 'http://apps.ideaconsult.net:8080/ambit2/algorithm/'>
+  <!ENTITY af 'http://apps.ideaconsult.net:8080/ambit2/feature/'>]>
+<rdf:RDF
+    xmlns:ac="&ac;"
+    xmlns:ot="&ot;"
+    xmlns:bx="&bx;"
+    xmlns:otee="&otee;"
+    xmlns:dc="&dc;"
+    xmlns="&this;"
+    xmlns:am="&am;"
+    xmlns:af="&af;"
+    xmlns:rdf="&rdf;"
+    xmlns:ad="&ad;"
+    xmlns:ag="&ag;"
+    xmlns:owl="&owl;"
+    xmlns:dcterms="&dcterms;"
+    xmlns:xsd="&xsd;"
+    xmlns:ota="&ota;"
+    xmlns:rdfs="&rdfs;"
+  xml:base="&this;">
+  <owl:Class rdf:about="&ot;Feature"/>
+  <owl:Class rdf:about="&ot;NumericFeature">
+    <rdfs:subClassOf rdf:resource="&ot;Feature"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="&ot;hasSource"/>
+  <owl:DatatypeProperty rdf:about="&ot;units"/>
+  <rdf:Description rdf:about="&ot;ToxicityCategory">
+    <rdfs:subClassOf rdf:resource="&xsd;string"/>
+  </rdf:Description>
+  <ot:NumericFeature>
+    <ot:hasSource rdf:resource="https://github.com/opentox-api/curl-examples/tree/master/feature"/>
+    <dc:creator>curl-examples</dc:creator>
+    <dc:rights>GPL v3</dc:rights>
+    <ot:units>mJ</ot:units>
+    <dc:title>myFeature</dc:title>
+    <rdf:type rdf:resource="&ot;Feature"/>
+  </ot:NumericFeature>
+</rdf:RDF>
